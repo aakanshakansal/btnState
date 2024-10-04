@@ -10,11 +10,13 @@ let btnState = 0; // This will reset with each function execution in serverless 
 // Toggle button state and return the new state as a number with a 2-second delay
 app.post("/toggle-btn", (req, res) => {
   // Simulate 2-second delay
+
   setTimeout(() => {
     btnState = btnState === 0 ? 1 : 0;
     console.log(`Button state toggled. New state: ${btnState}`); // Log the button state to the console
-    res.json(btnState); // Return the state directly as a number
-  }, 2000); // 2-second delay
+    res.json(btnState); // Return the state directly as a
+    number;
+  }, 100); // 2-second delay
 });
 
 // GET request to retrieve the current button state as a number with a 2-second delay
@@ -23,7 +25,7 @@ app.get("/btn-state", (req, res) => {
   setTimeout(() => {
     console.log(`Button state requested. Current state: ${btnState}`); // Log the button state to the console
     res.json(btnState); // Return the state directly as a number
-  }, 2000); // 2-second delay
+  }, 100); // 2-second delay
 });
 
 // Set the port dynamically (required for Vercel)
